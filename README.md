@@ -30,59 +30,7 @@ Implémentation from scratch et comparaison:
 
 ---
 
-## 📁 Structure du Projet
 
-```
-MNIST_Classification/
-├── part1_classical_models.py      # Code Part 1 (CNN, Faster R-CNN, VGG16, AlexNet)
-├── part2_vision_transformer.py    # Code Part 2 (ViT from scratch + Comparison)
-├── data/                          # Dossier des données
-│   ├── train-images-idx3-ubyte
-│   ├── train-labels-idx1-ubyte
-│   ├── t10k-images-idx3-ubyte
-│   └── t10k-labels-idx1-ubyte
-├── outputs/                       # Dossier des résultats
-│   ├── all_models_comparison.png
-│   ├── vit_comparison.png
-│   └── results_summary.txt
-└── README.md                      # Ce fichier
-```
-
----
-
-## 🔧 Installation
-
-### 1. **Prérequis**
-- Python >= 3.8
-- GPU NVIDIA (optionnel mais recommandé)
-
-### 2. **Installation des dépendances**
-
-```bash
-# Créer un environnement virtuel (optionnel)
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate  # Windows
-
-# Installer les packages
-pip install torch torchvision
-pip install scikit-learn
-pip install matplotlib
-pip install numpy
-pip install einops  # Pour Vision Transformer
-```
-
-### 3. **Télécharger le dataset MNIST**
-
-#### Option A: Depuis Kaggle (recommandé)
-```bash
-# Télécharger depuis https://www.kaggle.com/datasets/oddrationale/mnist-in-csv
-# Extraire dans le dossier './data'
-```
-
-#### Option B: Téléchargement automatique
-Le code téléchargera automatiquement MNIST depuis torchvision si les fichiers locaux ne sont pas trouvés.
 
 ---
 
