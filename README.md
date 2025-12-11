@@ -1,17 +1,6 @@
-# 📚 MNIST Classification Project
 
-## 📖 Table des Matières
-- [Vue d'ensemble](#vue-densemble)
-- [Structure du Projet](#structure-du-projet)
-- [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Résultats Attendus](#résultats-attendus)
-- [Interprétation des Résultats](#interprétation-des-résultats)
-- [References](#references)
 
----
-
-## 🎯 Vue d'ensemble
+## Vue d'ensemble
 
 Ce projet implémente et compare plusieurs architectures de réseaux de neurones pour la classification d'images MNIST:
 
@@ -34,7 +23,7 @@ Implémentation from scratch et comparaison:
 
 ---
 
-## 🚀 Utilisation
+## Utilisation
 
 ### **Part 1: Modèles Classiques**
 
@@ -43,12 +32,12 @@ python part1_classical_models.py
 ```
 
 **Ce que fait le code:**
-- ✅ Charge le dataset MNIST (60,000 images d'entraînement, 10,000 de test)
-- ✅ Entraîne 4 modèles (CNN, Faster R-CNN, VGG16, AlexNet)
-- ✅ Évalue chaque modèle avec Accuracy et F1-Score
-- ✅ Génère des graphiques de perte pour chaque modèle
-- ✅ Crée un tableau de comparaison final
-- ✅ Sauvegarde `all_models_comparison.png`
+- Charge le dataset MNIST (60,000 images d'entraînement, 10,000 de test)
+- Entraîne 4 modèles (CNN, Faster R-CNN, VGG16, AlexNet)
+- Évalue chaque modèle avec Accuracy et F1-Score
+- Génère des graphiques de perte pour chaque modèle
+- Crée un tableau de comparaison final
+- Sauvegarde `all_models_comparison.png`
 
 **Durée estimée:** 30-60 minutes (CPU) ou 10-15 minutes (GPU)
 
@@ -84,13 +73,13 @@ python part2_vision_transformer.py
 ```
 
 **Ce que fait le code:**
-- ✅ Implémente Vision Transformer from scratch
-- ✅ Entraîne le modèle ViT sur MNIST
-- ✅ Entraîne un CNN pour comparaison
-- ✅ Compare les résultats (Accuracy, F1, Training Time, Parameters)
-- ✅ Fournit une analyse détaillée
-- ✅ Génère des graphiques de comparaison
-- ✅ Sauvegarde `vit_comparison.png`
+- Implémente Vision Transformer from scratch
+- Entraîne le modèle ViT sur MNIST
+- Entraîne un CNN pour comparaison
+- Compare les résultats (Accuracy, F1, Training Time, Parameters)
+- Fournit une analyse détaillée
+- Génère des graphiques de comparaison
+- Sauvegarde `vit_comparison.png`
 
 **Durée estimée:** 40-50 minutes (CPU) ou 12-20 minutes (GPU)
 
@@ -145,7 +134,7 @@ INTERPRETATION & ANALYSIS
 
 ---
 
-## 📊 Résultats Attendus
+## Résultats Attendus
 
 ### **Part 1: Résultats Typiques**
 
@@ -165,29 +154,29 @@ INTERPRETATION & ANALYSIS
 
 ---
 
-## 🔍 Interprétation des Résultats
+## Interprétation des Résultats
 
 ### **Part 1 Analysis:**
 
 #### 1. **CNN (Custom)**
-- ✅ **Avantages:** Simple, rapide, bon pour MNIST
-- ⚠️ **Limitations:** Manque de contexte global
-- 💡 **Performance:** ~98.2% accuracy
+- **Avantages:** Simple, rapide, bon pour MNIST
+- **Limitations:** Manque de contexte global
+- **Performance:** ~98.2% accuracy
 
 #### 2. **Faster R-CNN**
-- ✅ **Avantages:** Architecture robuste
-- ⚠️ **Limitations:** Moins approprié pour classification simple
-- 💡 **Performance:** ~97.5% accuracy
+- **Avantages:** Architecture robuste
+- **Limitations:** Moins approprié pour classification simple
+- **Performance:** ~97.5% accuracy
 
 #### 3. **VGG16 (Fine-tuned)**
-- ✅ **Avantages:** Pré-entraîné sur ImageNet, meilleure accuracy
-- ⚠️ **Limitations:** Plus lent, plus de paramètres
-- 💡 **Performance:** ~99.1% accuracy ⭐ **MEILLEUR**
+- **Avantages:** Pré-entraîné sur ImageNet, meilleure accuracy
+- **Limitations:** Plus lent, plus de paramètres
+- **Performance:** ~99.1% accuracy
 
 #### 4. **AlexNet (Fine-tuned)**
-- ✅ **Avantages:** Classique, efficace
-- ⚠️ **Limitations:** Architecture plus ancienne
-- 💡 **Performance:** ~98.8% accuracy
+- **Avantages:** Classique, efficace
+- **Limitations:** Architecture plus ancienne
+- **Performance:** ~98.8% accuracy
 
 **Conclusion Part 1:** VGG16 offre la meilleure performance globale!
 
@@ -212,16 +201,6 @@ Classification Head
 Output (10 classes)
 ```
 
-**Résultats:**
-
-| Aspect | ViT | CNN | Verdict |
-|--------|-----|-----|---------|
-| Accuracy | 96.8% | 98.2% | CNN meilleur ✅ |
-| F1-Score | 0.968 | 0.982 | CNN meilleur ✅ |
-| Training Time | 485s | 45s | CNN 10x plus rapide ✅ |
-| Parameters | 14.1M | 1.2M | CNN 12x plus léger ✅ |
-| Scalability | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ViT meilleur ✅ |
-| Global Context | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ViT meilleur ✅ |
 
 **Insights Clés:**
 
@@ -236,7 +215,7 @@ Output (10 classes)
    - Plus versatile et scalable
    - Meilleur avec grandes images
    - Meilleur avec plus de données
-   - ⭐ State-of-the-art sur ImageNet, COCO, etc.
+  
 
 3. **Trade-offs:**
    - **CNN:** Rapide, efficace, bon pour petites données
@@ -245,13 +224,13 @@ Output (10 classes)
 **Conclusion Part 2:**
 ```
 Pour MNIST (28x28, données petites) → CNN
-Pour ImageNet, COCO (grandes images) → ViT ⭐
+Pour ImageNet, COCO (grandes images) → ViT 
 Pour tâches mixtes → Ensemble ou Hybrid
 ```
 
 ---
 
-## 📈 Visualisations Générées
+## Visualisations Générées
 
 ### Part 1:
 - `all_models_comparison.png`
@@ -267,7 +246,7 @@ Pour tâches mixtes → Ensemble ou Hybrid
 
 ---
 
-## 🎓 Concepts Clés Expliqués
+## Concepts Clés Expliqués
 
 ### **CNN (Convolutional Neural Network)**
 ```
@@ -297,146 +276,9 @@ Classification Head → Output (10 classes)
   - Charge poids pré-entraînés sur ImageNet
   - Gèle couches early
   - Entraîne seulement classifier
-  - ⚡ Plus rapide, meilleure accuracy
+  -  Plus rapide, meilleure accuracy
 
 - **From Scratch (ViT):**
   - Initialise weights aléatoirement
   - Entraîne tout le modèle
-  - ⏱️ Plus lent, nécessite plus de données
-
----
-
-## 🐛 Troubleshooting
-
-### Erreur: "FileNotFoundError: Dataset not found"
-**Solution:**
-```python
-# Le code téléchargera automatiquement depuis torchvision
-# Ou placez les fichiers dans ./data/
-```
-
-### Erreur: "CUDA out of memory"
-**Solution:**
-```python
-# Réduisez batch_size dans DataLoader
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)  # Au lieu de 128
-```
-
-### Erreur: "ModuleNotFoundError: No module named 'einops'"
-**Solution:**
-```bash
-pip install einops
-```
-
-### Code lent (utilise CPU au lieu de GPU)
-**Solution:**
-```bash
-# Vérifier CUDA availability
-python -c "import torch; print(torch.cuda.is_available())"
-
-# Si False, installer PyTorch avec CUDA support
-pip install torch torchvision torchaudio pytorch-cuda=12.1
-```
-
----
-
-## 📚 References
-
-### Vision Transformer
-- Dosovitskiy et al. (2021) - "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
-- Tutorial: [Vision Transformers from Scratch](https://medium.com/mlearning-ai/vision-transformers-from-scratch-pytorch-a-step-by-step-guide-96c3313c2e0c)
-
-### Classical Architectures
-- VGG (Simonyan & Zisserman, 2014)
-- AlexNet (Krizhevsky et al., 2012)
-- Faster R-CNN (Ren et al., 2016)
-
-### Ressources
-- MNIST Dataset: [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)
-- PyTorch Docs: [pytorch.org](https://pytorch.org)
-- einops Documentation: [einops.readthedocs.io](https://einops.readthedocs.io)
-
----
-
-## 📝 Notes Importantes
-
-1. **Chemin du Dataset:**
-   - Kaggle: `/kaggle/input/mnist-dataset/mnist/`
-   - Local: `./data/`
-   - Auto-download: Torchvision
-
-2. **Hyperparameters:**
-   ```python
-   # Part 1
-   - CNN: 5 epochs, lr=0.001, batch_size=128
-   - Faster R-CNN: 5 epochs, lr=0.001, batch_size=128
-   - VGG16: 5 epochs, lr=0.0001, batch_size=128
-   - AlexNet: 5 epochs, lr=0.0001, batch_size=128
-   
-   # Part 2
-   - ViT: 10 epochs, lr=0.001, batch_size=128, depth=12, embed_dim=256
-   - CNN: 5 epochs, lr=0.001, batch_size=128
-   ```
-
-3. **Device Management:**
-   - Auto-detect GPU/CPU
-   - Utilise CUDA si disponible
-   - Fallback sur CPU sinon
-
-4. **Reproducibility:**
-   - Résultats peuvent varier légèrement d'une exécution à l'autre
-   - Pour reproduire exactement, fixer seed: `torch.manual_seed(42)`
-
----
-
-## 👨‍💻 Auteur & Contact
-
-**Projet:** MNIST Classification Comparison
-**Date:** 2025
-**Language:** Python 3.8+
-**Framework:** PyTorch
-
----
-
-## 📄 License
-
-Ce projet est fourni à titre éducatif.
-
----
-
-## ✅ Checklist Avant Exécution
-
-- [ ] Python 3.8+ installé
-- [ ] PyTorch installé
-- [ ] GPU/CUDA vérifiés (optionnel)
-- [ ] Dataset MNIST téléchargé ou accessible
-- [ ] Toutes dépendances installées
-- [ ] Espace disque suffisant (~500MB)
-- [ ] GPU avec RAM suffisante (optionnel, 4GB min)
-
----
-
-## 🎯 Quick Start
-
-```bash
-# 1. Cloner/Télécharger le projet
-cd MNIST_Classification
-
-# 2. Installer dépendances
-pip install torch torchvision scikit-learn matplotlib numpy einops
-
-# 3. Exécuter Part 1
-python part1_classical_models.py
-
-# 4. Exécuter Part 2
-python part2_vision_transformer.py
-
-# 5. Analyser les résultats
-# Ouvrir all_models_comparison.png et vit_comparison.png
-```
-
-**Durée totale:** ~2-3 heures (GPU) ou ~5-6 heures (CPU)
-
----
-
-**Bon chance! 🚀**
+  - Plus lent, nécessite plus de données
